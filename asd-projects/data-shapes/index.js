@@ -24,7 +24,7 @@ $(document).ready(function () {
     showCount: 60,
     show: true,
     displayType: 0,
-  };
+  }; 
 
   // This line produces most of the data array and stores it in the variable "dataShapes"
   const dataShapes = generateShapeData();
