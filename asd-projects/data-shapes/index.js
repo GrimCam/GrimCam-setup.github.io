@@ -69,7 +69,11 @@ $(document).ready(function () {
   }
 
   // TODO 5-a: add a function that handles the bad display type
-
+  function handleBad(data, repeat) {
+    repeat++
+    setBackgroundWithMixed(data, repeat)
+    animationDetails.displayType = 3
+  }
 
   /////////////////////////////////////////////////
   // BUTTON HANDLERS BELOW HERE (3-b, 4-b, 5-b) ///
@@ -88,6 +92,9 @@ $(document).ready(function () {
 
   function badDisplay() {
     // TODO 5-b: call your handleBad function
+    var currentShape = dataShape[currentIndex]
+    var repeat = currentShape.repeat
+    handleBad(currentShape, repeat)
 
   }
 
@@ -101,10 +108,10 @@ $(document).ready(function () {
 
   // This function generates objects for 26 of the necessary 27 entries into the dataShapes array that is used for most of this program
   function generateShapeData() {
-    const data = [];
-    const colors = ["red", "green", "blue"];
-    const shapes = ["square", "triangle", "circle"];
-    const repeats = [1, 2, 3];
+    const data = []
+    const colors = ["red", "green", "blue"]
+    const shapes = ["square", "triangle", "circle"]
+    const repeats = [1, 2, 3]
 
     for (var i = 0; i < colors.length; i++) {
       for (var j = 0; j < shapes.length; j++) {
