@@ -98,14 +98,19 @@ function checkForNewDirection(event) {
   snake.head.direction = "down";
 }
 
-console.log(snake.head.direction);
   /* BONUS: Only allow direction changes to take place if the new direction is
   perpendicular to the current direction
   */
 
   if (activeKey === KEY.LEFT) {
     snake.head.direction = "left";
-  }
+  }else if (activeKey === KEY.UP) {
+    snake.head.direction = "up";
+  } else if (activeKey === KEY.RIGHT) {
+    snake.head.direction = "right";
+  }else if (activeKey === KEY.DOWN) {
+    snake.head.direction = "down";
+  } 
 
   // FILL IN THE REST
 
@@ -122,14 +127,15 @@ function moveSnake() {
   column/row properties. 
   
   */
-  for (let i = snake.body[i]; i <= 10; i++) {
-    var snakeSquare = "???";
+ 
+  for (let i = snake.body.length - 1; i > 0; i--) {
+    var snakeSquare = snake.body[i];
+    var nextSnakeSquare = snake.body[i - 1];
+    var nextRow = nextSnakeSquare.row;
+    var nextColumn = nextSnakeSquare.column;
+    var nextDirection = snake.tail.direction;
 
-    var nextSnakeSquare = "???";
-    var nextRow = "???";
-    var nextColumn = "???";
-    var nextDirection = "???";
-
+ 
     snakeSquare.direction = nextDirection;
     snakeSquare.row = nextRow;
     snakeSquare.column = nextColumn;
