@@ -45,7 +45,7 @@ $(document).ready(function () {
   }
   dataShapes.push(shape)
   // TODO 2: add a new property to all data shapes
-  for (var i = 0; i === dataShapes.length; i++) {
+  for (var i = 0; i < dataShapes.length; i++) {
     var currentShape = dataShapes[i]
     if (currentShape.color === "red") {
       currentShape.goodBehavior = "bounce"
@@ -86,13 +86,13 @@ $(document).ready(function () {
 
   function goodDisplay() {
     // TODO 4-b: call your handleGood function
-    var currentShape = dataShape[currentIndex]
-    handleGood(currentShape)
+    var currentShape = dataShapes[currentIndex]
+    handleGood(currentShape.color, currentShape.shape, currentShape.repeat)
   }
 
   function badDisplay() {
     // TODO 5-b: call your handleBad function
-    var currentShape = dataShape[currentIndex]
+    var currentShape = dataShapes[currentIndex]
     var repeat = currentShape.repeat
     handleBad(currentShape, repeat)
 
